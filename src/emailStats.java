@@ -38,11 +38,25 @@ public class emailStats{
       if(first[i]) numUniqDomains++;
 
     }
+	  
+    String[][] splitEmailAddresses = new String[emailAddresses.length][];
+    for(int i=0; i<emailAddresses.length; i++) {
+	    
+    }
     // construct the unique array
       
     // count domains
   }
   
+  // Input: a single string containing the email address of one user
+  // Output: an array with the username part in index 0, then the domain split on "."s
+  // This method will produce a 1D array splitting on "@" and "." (other than those in the username)
+  public static String[] splitEmailAddress(String emailAddress){
+  
+    return new String[1];
+  }
+	
+	
   // Input: a single String containing the email address of one user
   // Output: a single string with just the domain part of the address
   // Description: finds `@` and returns the remainder of the input
