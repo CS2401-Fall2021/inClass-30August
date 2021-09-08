@@ -134,6 +134,16 @@ public class emailStats{
     return 0;
   }
   public static String[] produceRandomEmails() {
-    return new String[] {"kramulous@optonline.net","rhavyn@iCloud.com","jgwang@gmail.com","xtang@outlook.com","tubesteak@outlook.com","airship@att.net","pgolle@live.com","staffelb@local.comcast.net","techie@verizon.net","tedrlord@Hotmail.com","osaru@hotmail.com","nwiger@something.verizon.net","bahwi@att.net","enintend@outlook.com","webteam@outlook.com","martink@mac.com","paley@yahoo.com","heine@gmail.com","podmaster@aol.com","kdawson@me.com","cyrus@mac.com","mleary@verizon.net","philen@att.net","neuffer@hotmail.com","elflord@yahoo.ca","jesse@Icloud.com","ramollin@msn.com","thaljef@me.com","osrin@me.com","sacraver@hotmail.com","spadkins@att.net","pereinar@verizon.net","jguyer@icloud.com","sethbrown@icloud.com","calin@hotmail.com","kdawson@comcast.net","jfriedl@live.com","miami@live.com","sacraver@mac.com","fukuchi@outlook.com","hstiles@comcast.net","chrwin@icloud.com","osrin@yahoo.ca","daveed@live.com","itstatus@yahoo.com","pkplex@yahoo.com","johndo@sbcglobal.net","munjal@aol.com","mdielmann@msn.com","sriha@icloud.com"};
+    return new String[] {"kramulous@optonline.net","rhavyn@iCloud.com","jgwang@gmail.com","xtang@outlook.com","tubesteak@outlook.com","airship@att.net","pgolle@live.com","staffelb@local.comcast.net","techie@verizon.net","tedrlord@Hotmail.com","osaru@hotmail.com","nwiger@something.verizon.net","bahwi@att.net","enintend@outlook.com","webteam@outlook.com","martink@mac.com","paley@yahoo.com","heine@gmail.com","podmaster@aol.com","kdawson@me.com","cyrus@mac.com","mleary@verizon.net","philen@att.net","neuffer@hotmail.com","elflord@yahoo.ca","jesse@Icloud.com","ramollin@msn.com","thaljef@me.com","osrin@me.com","sacraver@hotmail.com","spadkins@att.net","pereinar@verizon.net","jguyer@icloud.com","sethbrown@icloud.com","calin@hotmail.com","kdawson@comcast.net","jfriedl@live.com","miami@live.com","sacraver@mac.com","fukuchi@outlook.com","hstiles@comcast.net","chrwin@icloud.com","osrin@yahoo.ca","daveed@live.com","itstatus@yahoo.com","pkplex@yahoo.com","johndo@sbcglobal.net","munjal@aol.com","mdielmann@msn.com","sriha@icloud.com", "mdielmann@google.co.uk", "mdielmann@something.domain.co.uk","student@miners.utep.edu"};
   }
+	
+  public static void printArray(String[] array) {
+    System.out.print("[");
+    for(int i=0; i<array.length; i++) {
+      if(i>0) System.out.print(",");
+      System.out.print(array[i]);
+    }
+    System.out.println("]");
+  }
+	
 }
