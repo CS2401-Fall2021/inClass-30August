@@ -38,10 +38,26 @@ public class emailStats{
       if(first[i]) numUniqDomains++;
 
     }
+    
+    // unit testing for split email address
+    printArray(splitEmailAddress("stu.dent@miners.utep.edu"));
+    printArray(splitEmailAddress("stu.dent@miners@utep.edu"));
+    printArray(splitEmailAddress("stu.dent@min.ers.ut.ep.edu.uk.au"));
+    printArray(splitEmailAddress("stu.dent@"));
+    printArray(splitEmailAddress("@stu.dent"));
+    printArray(splitEmailAddress("stu..dent"));
 	  
     String[][] splitEmailAddresses = new String[emailAddresses.length][];
     for(int i=0; i<emailAddresses.length; i++) {
-	    
+	    // for each address, populate its row
+      splitEmailAddresses[i] = splitEmailAddress(emailAddresses[i]);
+    }
+    
+    for(int i=0; i<splitEmailAddresses.length; i++) {
+      // print TLD
+      int TLDIndex = splitEmailAddresses[i].length-1;
+      System.out.print(splitEmailAddresses[i][TLDIndex] + " ");
+      System.out.println(splitEmailAddresses[i][0]);
     }
     // construct the unique array
       
@@ -52,8 +68,33 @@ public class emailStats{
   // Output: an array with the username part in index 0, then the domain split on "."s
   // This method will produce a 1D array splitting on "@" and "." (other than those in the username)
   public static String[] splitEmailAddress(String emailAddress){
-  
-    return new String[1];
+    int countSections = 1; 
+    for(int i=0; i<emailAddress.length(); i++) {
+      if(emailAddress.charAt(i) == '@') {
+        countSections++;
+      }
+      if(emailAddress.charAt(i) == '.' && countSections>1) {
+        countSections++;
+      }
+    }
+    String[] rtn = new String[countSections];
+    int index = 0; 
+    rtn[index] = "";
+    for(int i=0; i<emailAddress.length(); i++) {
+      if(emailAddress.charAt(i) == '@') {
+        index++;
+        rtn[index] = "";
+      }
+      else if(emailAddress.charAt(i) == '.' && index>0) {
+        index++;
+        rtn[index] = "";
+      }
+      else {
+        rtn[index] += emailAddress.charAt(i);
+      }
+    }
+    
+    return rtn;
   }
 	
 	
